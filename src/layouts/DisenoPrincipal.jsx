@@ -1,5 +1,4 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import BarraNavegacion from '../components/BarraNavegacion';
 import PieDePagina from '../components/PieDePagina';
 import { motion } from 'framer-motion';
@@ -12,10 +11,13 @@ import { motion } from 'framer-motion';
  * También aplica una animación de transición suave al cambiar de página.
  */
 const DisenoPrincipal = () => {
+    const location = useLocation();
+    const isHome = location.pathname === '/';
+
     return (
         <div className="flex flex-col min-h-screen bg-surface">
             <BarraNavegacion />
-            <main className="flex-grow pt-20">
+            <main className={`flex-grow ${isHome ? '' : 'pt-24'}`}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
