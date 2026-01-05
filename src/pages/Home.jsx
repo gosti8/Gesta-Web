@@ -8,8 +8,8 @@ const Home = () => {
         <div className="overflow-hidden">
             {/* Hero Section */}
             <section className="relative h-[90vh] flex items-center justify-center bg-primary-dark text-white overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 to-primary-dark/40"></div>
+                <div className="absolute inset-0 bg-[url('/rio_uruguay.jpg')] bg-cover bg-center opacity-30"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/90 via-primary-dark/70 to-primary-dark/50"></div>
 
                 <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
                     <motion.span
@@ -24,7 +24,7 @@ const Home = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight"
+                        className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight text-white"
                     >
                         Desarrollo que <span className="text-accent">perdura</span>. <br />
                         Gestión que <span className="text-secondary">transforma</span>.
@@ -144,9 +144,7 @@ const Home = () => {
                     <div className="relative">
                         <div className="aspect-square rounded-2xl overflow-hidden bg-gray-100">
                             {/* Placeholder for team image */}
-                            <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">
-                                Imagen Equipo
-                            </div>
+                            <img src="/nature_bg.jpg" alt="Equipo Gesta" className="w-full h-full object-cover" />
                         </div>
                         <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg max-w-xs">
                             <div className="flex items-center gap-4 mb-2">

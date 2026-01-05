@@ -36,23 +36,22 @@ const BarraNavegacion = () => {
         { nombre: 'Contacto', ruta: '/contacto' },
     ];
 
+    const esInicio = ubicacion.pathname === '/';
+    const usarEstiloOscuro = desplazado || !esInicio;
+
     return (
         <nav
-            className={`fixed w-full z-50 transition-all duration-300 ${desplazado ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
+            className={`fixed w-full z-50 transition-all duration-300 ${usarEstiloOscuro ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
                 {/* Logotipo */}
-                <Link to="/" className="flex items-center gap-2 group">
-                    <div className="bg-primary p-2 rounded-lg group-hover:bg-primary-dark transition-colors">
-                        <Leaf className="text-white w-6 h-6" />
-                    </div>
-                    <div className="flex flex-col">
-                        <span className={`font-heading font-bold text-xl leading-none tracking-tight ${desplazado ? 'text-primary-dark' : 'text-primary-dark'}`}>
-                            GESTA
-                        </span>
-                        <span className="text-[10px] tracking-widest uppercase text-text-muted">Consultora</span>
-                    </div>
+                <Link to="/" className="flex items-center space-x-2 group">
+                    <img
+                        src={usarEstiloOscuro ? "/assets/logos/logo_original.svg" : "/assets/logos/logo_light.svg"}
+                        alt="Gesta Consultora"
+                        className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    />
                 </Link>
 
                 {/* Navegación de Escritorio */}
@@ -61,7 +60,9 @@ const BarraNavegacion = () => {
                         <Link
                             key={enlace.ruta}
                             to={enlace.ruta}
-                            className={`text-sm font-medium transition-colors hover:text-primary ${ubicacion.pathname === enlace.ruta ? 'text-primary font-semibold' : 'text-text-main'
+                            className={`text-sm font-medium transition-colors hover:text-primary ${ubicacion.pathname === enlace.ruta
+                                ? 'text-primary font-semibold'
+                                : usarEstiloOscuro ? 'text-text-main' : 'text-white'
                                 }`}
                         >
                             {enlace.nombre}
@@ -77,7 +78,7 @@ const BarraNavegacion = () => {
 
                 {/* Botón de Menú Móvil */}
                 <button
-                    className="md:hidden text-text-main"
+                    className={`md:hidden ${usarEstiloOscuro ? 'text-text-main' : 'text-white'}`}
                     onClick={() => setEstaAbierto(!estaAbierto)}
                 >
                     {estaAbierto ? <X /> : <Menu />}

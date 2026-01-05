@@ -17,7 +17,7 @@ const PieDePagina = () => {
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-2 mb-4">
                             <div className="bg-white/10 p-2 rounded-lg">
-                                <Leaf className="text-white w-6 h-6" />
+                                <img src="/assets/logos/logo_light.svg" alt="Gesta" className="w-8 h-8 object-contain" />
                             </div>
                             <span className="font-heading font-bold text-xl tracking-tight">GESTA</span>
                         </div>

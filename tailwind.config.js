@@ -8,26 +8,25 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#1A4D2E", // Deep Forest Green
-          light: "#2F6B46",
-          dark: "#11321F",
+          DEFAULT: '#00547c', // Official Brand Blue
+          dark: '#003d5c',    // Darker shade for hover/backgrounds
         },
         secondary: {
-          DEFAULT: "#D6CFC7", // Earthy Taupe
-          light: "#E8E4E0",
-          dark: "#BDB5AB",
+          DEFAULT: "#6AA84F", // Verde Ribereño
+          light: "#8BC273",
+          dark: "#4D8036",
         },
         accent: {
-          DEFAULT: "#E89F71", // Muted Terracotta/Gold for warmth
-          hover: "#D68C5E",
+          DEFAULT: "#E1A24B", // Ocre Caña
+          hover: "#C68935",
         },
         surface: {
-          DEFAULT: "#F9F9F8", // Off-white
-          dark: "#F0F0ED",
+          DEFAULT: "#F5F6F5", // Off-white
+          dark: "#E5E6E5",
         },
         text: {
-          main: "#1F2937", // Dark Charcoal
-          muted: "#6B7280",
+          main: "#1F2A2E", // Dark
+          muted: "#7A4F35", // Tierra
           light: "#F9FAFB",
         }
       },
